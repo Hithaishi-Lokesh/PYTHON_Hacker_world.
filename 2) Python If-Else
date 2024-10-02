@@ -1,0 +1,50 @@
+Given an integer, , perform the following conditional actions:
+
+If  is odd, print Weird
+If  is even and in the inclusive range of  to , print Not Weird
+If  is even and in the inclusive range of  to , print Weird
+If  is even and greater than , print Not Weird
+Input Format
+A single line containing a positive integer, .
+Constraints
+Output Format
+Print Weird if the number is weird. Otherwise, print Not Weird.
+Sample Input 0
+3
+Sample Output 0
+Weird
+Explanation 0
+is odd and odd numbers are weird, so print Weird.
+Sample Input 1
+24
+Sample Output 1
+Not Weird
+Explanation 1 and  is even, so it is not weird.
+
+
+Solution
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+def odd(num):
+    if num % 2 != 0:
+        return "Weird"
+    else:
+        return even(num)
+
+def even(num):
+    if 2 <= num <= 5:
+        return "Not Weird"
+    elif 6 <= num <= 20:
+        return "Weird"
+    elif num > 20:
+        return "Not Weird"
+
+N = int(input())
+print(odd(N))
